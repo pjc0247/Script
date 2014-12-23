@@ -27,7 +27,7 @@ public:
 		key : 키
 		value : 값
 	*/
-	void pushValue(std::string &&key,std::string value);
+	void pushValue(const std::string &key,const std::string &value);
 	/*
 		popValue
 
@@ -35,7 +35,7 @@ public:
 
 		key : 키
 	*/
-	void popValue(std::string &&key);
+	void popValue(const std::string &key);
 	/*
 		getValue
 
@@ -44,7 +44,7 @@ public:
 
 		key : 키
 	*/
-	std::string getValue(std::string &&key);
+	std::string getValue(const std::string &key);
 
 
 	/*
@@ -65,7 +65,7 @@ public:
 			setValue("name", "pjc");
 			compile("hello #{anz}#{@}", "!"); // hello anz!
 	*/
-	std::string compile(std::string script, ...);
+	std::string compile(const std::string &script, ...);
 
 protected:
 	std::map<std::string,std::string> values;
