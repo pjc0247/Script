@@ -54,13 +54,13 @@ std::string Script::compile(std::string script, ...){
 	return script;
 }
 
-void Script::pushValue(std::string &&key,std::string value){
+void Script::pushValue(const std::string &key,const std::string &value){
 	values[key] = value;
 }
-void Script::popValue(std::string &&key){
+void Script::popValue(const std::string &key){
 	values.erase( key );
 }
-std::string Script::getValue(std::string &&key){
+std::string Script::getValue(const std::string &key){
 	auto &v = values.find(key);
 
 	if( v == values.end() )
